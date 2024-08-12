@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeneralaScoreKeeper.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Label Text="Game Setup" FontSize="24" HorizontalOptions="Center" />
+
+            <!-- Player List -->
+            <ListView x:Name="PlayersList" Margin="0,20,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Entry Text="{Binding Name}" Placeholder="Player Name" WidthRequest="200" />
+                                <Button Text="Remove" Clicked="OnRemovePlayer" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Buttons to add player and start game -->
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                <Button Text="Add Player" Clicked="OnAddPlayer" />
+                <Button Text="Start Game" Clicked="OnStartGame" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
